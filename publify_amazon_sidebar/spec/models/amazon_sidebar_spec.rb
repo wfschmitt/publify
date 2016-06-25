@@ -29,10 +29,10 @@ RSpec.describe AmazonSidebar do
 
   describe 'when overriding the defaults' do
     it 'gets attributes set correctly' do
-      sb = AmazonSidebar.new(title: 'Books',
-                             associate_id: 'justasummary-21',
-                             maxlinks: 3,
-                             blog: Blog.new)
+      sb = AmazonSidebar.new(blog: Blog.new
+                             config: { 'title' => 'Books',
+                                       'associate_id' => 'justasummary-21',
+                                       'maxlinks' => 3 })
       expect(sb).to be_valid
       expect(sb.title).to eq('Books')
       expect(sb.associate_id).to eq('justasummary-21')
